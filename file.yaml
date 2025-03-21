@@ -1,0 +1,16 @@
+---
+- name: Trabajar con ficheros
+  hosts: debian1
+  vars:
+    - file_path: /tmp/prueba-epica.txt
+  tasks:
+  - name: Crear fichero vacío
+    file:
+      path: "{{file_path}}"
+      state: "touch"
+  - name: Cambiar permisos, propietario y grupo del fichero anterior
+    file:
+      path: "{{file_path}}"
+      owner: ansible
+      group: ansible
+      mode: '0777'
