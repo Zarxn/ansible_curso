@@ -1,6 +1,6 @@
 ---
 - name: Trabajar con ficheros
-  hosts: debian1
+  hosts: all
   vars:
     - file_path: /tmp/prueba-epica.txt
   tasks:
