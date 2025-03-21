@@ -1,44 +1,23 @@
 ---
 - name: Trabajar con directorios
-
   hosts: all
-
   vars:
-
     directorio: "/tmp/dir1"
-
   tasks:
-
     - name: Crear directorio
-
       file:
-
         path: "{{directorio}}"
-
         state: directory
-
         mode: '0755'
-
         owner: ansible
-
     - name: Crear fichero en el directorio {{directorio}}
-
       file:
-
         path: "{{directorio}}/prueba-god.txt"
-
         owner: ansible
-
         state: touch
-
         group: ansible
-
         mode: '0777'
-
     - name: Borrar fichero en el directorio {{directorio}}
-
       file:
-
         path: "{{directorio}}/prueba-god.txt"
-
         state: absent
